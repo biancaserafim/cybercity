@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3t7v8btvur0f"]
+
+[ext_resource type="Texture2D" uid="uid://cdg1lu7mrquvh" path="res://inimigos/portal/frame-1.png" id="1_ic7tm"]
+[ext_resource type="Script" uid="uid://b6tcs33kjrofc" path="res://portal_vitoria.gd" id="1_ubmij"]
+[ext_resource type="Texture2D" uid="uid://bd5mdsqsyjgrh" path="res://inimigos/portal/frame-3.png" id="2_ubmij"]
+[ext_resource type="Texture2D" uid="uid://bop3dcrjsqji0" path="res://inimigos/portal/frame-4.png" id="3_e0d8k"]
+[ext_resource type="Texture2D" uid="uid://d24b80ts1syve" path="res://inimigos/portal/frame-5.png" id="4_fii6a"]
+[ext_resource type="Texture2D" uid="uid://b61qq0hlrusq5" path="res://inimigos/portal/frame-6.png" id="5_8wq7k"]
+[ext_resource type="Texture2D" uid="uid://3nm1uu43r3ng" path="res://inimigos/portal/frame-8.png" id="6_3neto"]
+[ext_resource type="Texture2D" uid="uid://ccjxv1ue0ow8q" path="res://inimigos/portal/frame-9.png" id="7_jpx15"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1pmg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ic7tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ubmij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e0d8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fii6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8wq7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3neto")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jpx15")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0pphm"]
+radius = 70.0
+height = 345.0
+
+[node name="PortalVitoria" type="Area2D"]
+script = ExtResource("1_ubmij")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(678, 301)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_h1pmg")
+autoplay = "default"
+frame_progress = 0.5679085
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(678, 301)
+scale = Vector2(0.4, 0.4)
+shape = SubResource("CapsuleShape2D_0pphm")

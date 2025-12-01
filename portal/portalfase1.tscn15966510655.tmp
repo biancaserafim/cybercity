@@ -1,0 +1,62 @@
+[gd_scene load_steps=11 format=3 uid="uid://kvskaiis1qdv"]
+
+[ext_resource type="Script" uid="uid://br1midgv3jpl8" path="res://portal/portalfase_1.gd" id="1_scs5c"]
+[ext_resource type="Texture2D" uid="uid://cdg1lu7mrquvh" path="res://inimigos/portal/frame-1.png" id="2_4ag3q"]
+[ext_resource type="Texture2D" uid="uid://b7mtmouce3shv" path="res://inimigos/portal/frame-2.png" id="3_0212v"]
+[ext_resource type="Texture2D" uid="uid://bd5mdsqsyjgrh" path="res://inimigos/portal/frame-3.png" id="4_c3ckr"]
+[ext_resource type="Texture2D" uid="uid://b61qq0hlrusq5" path="res://inimigos/portal/frame-6.png" id="5_6dubg"]
+[ext_resource type="Texture2D" uid="uid://d24b80ts1syve" path="res://inimigos/portal/frame-5.png" id="6_kfot6"]
+[ext_resource type="Texture2D" uid="uid://3nm1uu43r3ng" path="res://inimigos/portal/frame-8.png" id="7_npmis"]
+[ext_resource type="Texture2D" uid="uid://dcrn61lmsldbd" path="res://inimigos/portal/frame-7.png" id="8_q08v4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7dok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4ag3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0212v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c3ckr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6dubg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kfot6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_npmis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_q08v4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t15ym"]
+radius = 51.0
+height = 256.0
+
+[node name="portal" type="Area2D"]
+scale = Vector2(0.8, 0.8)
+collision_mask = 7
+script = ExtResource("1_scs5c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(671, 333)
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("SpriteFrames_v7dok")
+autoplay = "default"
+frame_progress = 0.806364
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(671, 334)
+shape = SubResource("CapsuleShape2D_t15ym")
+debug_color = Color(0.9253863, 0.09908343, 0.62657803, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
