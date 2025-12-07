@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://chxgmv27pfag5"]
+
+[ext_resource type="Texture2D" uid="uid://bf6muo2yrvgw3" path="res://assets/portal/Gemini_Generated_Image_k0dd21k0dd21k0dd.png" id="1_8wiqx"]
+[ext_resource type="Script" uid="uid://cd6dsqnu1s0s0" path="res://vitoria.gd" id="1_14ec6"]
+
+[node name="vitoria" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_14ec6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -16.0
+offset_top = -185.0
+offset_right = 3.0
+offset_bottom = 191.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8wiqx")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 342.0
+offset_top = 423.0
+offset_right = -335.0
+offset_bottom = -84.0
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

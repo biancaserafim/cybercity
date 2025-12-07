@@ -11,7 +11,14 @@ config_version=5
 [application]
 
 config/name="jogocorsini"
+run/main_scene="uid://cxcixth6pn3dp"
 config/features=PackedStringArray("4.5", "Forward Plus")
+
+[display]
+
+window/size/window_width_override=648
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
